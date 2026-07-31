@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>LNCT bank</title>
+        <script type="text/javascript">
+            function trigger(){
+ document.getElementById("hover").addEventListener("mouseover",popup)
+
+ function popup(){
+    alert("Welcome to LNCT Bank !!!")
+ }
+            }
+        </script>
+        <script>
+            function validateCustomer(){
+                var custId=document.getElementById("custID").value;
+                var validateCust=custId.includes("XYZ");
+                if(validateCust){
+                    document.write("Customer is valid you can proceed to generate coupan")
+                }else if(validateCust==""){
+                    document.write("Customer id can not be blank")
+                }else{
+                    document.write("Invalid customer id ")
+                }
+                
+            }
+        </script>
+        <script>
+            function generateCoupan(){
+                var custId=document.getElementById("custID").value;
+                var x= custId+"789456"
+                var validateCust=custId.includes("XYZ");
+                  if(validateCust){
+                    document.write("Your coupan is"+x)
+               
+                }else{
+                    document.write("Invalid customer id coupan can't be generated ")
+                }
+            }
+        </script>
+    </head>
+    <body onload="trigger();">
+        <p id="hover">Welcome Customer !!!</p>
+        <p id="demo">follow the steps given below to get Diwali coupan -<br>
+         1.Enter the customer id in the text box <br>
+         2.Click on validate Customer button <br>
+         3.click on register button to hide all the steps and can apply for coupans <br>
+        </p> <br>
+
+        <button type="button" onclick="document.getElementById('demo').style.display='none'">Click here to register</button> <br> <br> <br>
+        Enter customer ID:
+        <input id="custID" type="text" name="customerID"> <br> <br>
+        <button type="button1" onclick="validateCustomer()">validate Customer</button>
+        <button type="button" onclick="generateCoupan()">Generate coupan</button>
+
+    </body>
+</html>
